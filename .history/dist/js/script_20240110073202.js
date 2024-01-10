@@ -45,7 +45,7 @@ window.onscroll = function () {
   } else {
     navbar.classList.remove("navbar-fixed");
     toTop.classList.add("hide");
-    darkModeContainer.classList.add("dark-mode-slide-down");
+      kModeContainer.classList.add("dark-mode-slide-down");
     darkModeContainer.classList.remove("dark-mode-slide-up");
     setTimeout(() => {
       toTop.style.display = "none";
@@ -98,7 +98,7 @@ function sendMessage(event) {
 
   var name = document.getElementById('name').value;
   var message = document.getElementById('messages').value;
-  var whatsappMessage = `Halo saya *${name}*, ${message}`;
+  var whatsappMessage = `*${name}*\n${message}`;
   var encodedMessage = encodeURIComponent(whatsappMessage);
   var phoneNumber = '6282139860827';
   var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

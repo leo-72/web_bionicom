@@ -98,7 +98,7 @@ function sendMessage(event) {
 
   var name = document.getElementById('name').value;
   var message = document.getElementById('messages').value;
-  var whatsappMessage = `Halo saya *${name}*, ${message}`;
+  var whatsappMessage = `*${name}*, ${message}`;
   var encodedMessage = encodeURIComponent(whatsappMessage);
   var phoneNumber = '6282139860827';
   var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -20,11 +20,13 @@ span.onclick = function() {
   popup.style.display = "none";
 }
 
+// Ketika pengguna mengklik di luar modal, tutup modal
 window.onclick = function(event) {
   if (event.target == popup) {
     popup.style.display = "none";
   }
 }
+
 
 navbarLine.addEventListener("click", function () {
   navbarLine.classList.toggle("nl-active");
@@ -98,7 +100,7 @@ function sendMessage(event) {
 
   var name = document.getElementById('name').value;
   var message = document.getElementById('messages').value;
-  var whatsappMessage = `Halo saya *${name}*, ${message}`;
+  var whatsappMessage = `*${name}*\n${message}`;
   var encodedMessage = encodeURIComponent(whatsappMessage);
   var phoneNumber = '6282139860827';
   var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

@@ -98,10 +98,21 @@ function sendMessage(event) {
 
   var name = document.getElementById('name').value;
   var message = document.getElementById('messages').value;
-  var whatsappMessage = `Halo saya *${name}*, ${message}`;
+  var whatsappMessage = `*${name}*\n${message}`;
   var encodedMessage = encodeURIComponent(whatsappMessage);
   var phoneNumber = '6282139860827';
   var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
   window.open(whatsappURL, '_blank');
 }
+
+const navLinks = document.querySelectorAll('#nav-menu a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Hapus kelas 'active' dari semua tautan
+      navLinks.forEach(navLink => navLink.classList.remove('active'));
+      // Tambahkan kelas 'active' pada tautan yang diklik
+      this.classList.add('active');
+    });
+  });

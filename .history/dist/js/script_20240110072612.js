@@ -98,10 +98,35 @@ function sendMessage(event) {
 
   var name = document.getElementById('name').value;
   var message = document.getElementById('messages').value;
-  var whatsappMessage = `Halo saya *${name}*, ${message}`;
+  var whatsappMessage = `*${name}*\n${message}`;
   var encodedMessage = encodeURIComponent(whatsappMessage);
   var phoneNumber = '6282139860827';
   var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
   window.open(whatsappURL, '_blank');
 }
+
+const navLinks = document.querySelectorAll('#nav-menu a');
+
+// Fungsi untuk menandai tautan navigasi yang aktif
+function setActiveLink() {
+  // Loop melalui setiap tautan navigasi
+  navLinks.forEach(link => {
+    // Hapus kelas 'active' dari semua tautan
+    link.classList.remove('active');
+
+    // Periksa jika tautan cocok dengan bagian halaman yang sedang ditampilkan
+    const sectionId = link.getAttribute('href').substring(1);
+    const section = document.getElementById(sectionId);
+
+    if (section.getBoundingClientRect().top < window.innerHeight * 0.5 && section.getBoundingClientRect().bottom > window.innerHeight * 0.5) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Tambahkan event listener ketika menggulir halaman
+document.addEventListener('scroll', setActiveLink);
+
+// Panggil fungsi untuk menandai tautan navigasi yang aktif saat halaman dimuat
+setActiveLink();
