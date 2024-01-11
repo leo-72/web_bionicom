@@ -58,59 +58,31 @@
     <!-- Header End -->
     <!-- Hero Section Start -->
     <section id="home" class="px-4 font-berlin">
-      <div class="container pt-16 pb-96 md:pt-48 md:pb-80 md:p-40">
-        <div class=" mx-auto relative w-full h-80">
-          <div x-data="{
-          activeSlide: 1,
-          slides: [
-          {id: 1, image: 'dist/images/component/bionicom1.png', title: 'Bionicom Zinc', description: 'Membantu memenuhi kebutuhan vitamin B, C, dan E serta mineral zinc untuk membantu memlihara daya tahan tubuh dan membantu memulihkan kondisi setelah sakit.'},
-          {id: 2, image: 'dist/images/component/bionicomc.png', title: 'Bionicom-C', description: 'Kombinasi vitamin B kompleks dan vitamin C, Niacinamide dan Calcium Pantothenate yang penting untuk memelihara tubuh.'},
-          {id: 3, image: 'dist/images/component/bionicomc500.png', title: 'Bionicom-C 500', description: 'Kombinasi vitamin B kompleks dan vitamin C, Niacinamide dan Calcium Pantothenate yang penting untuk memelihara tubuh.'},
-          ],
-          loop() {
-              setInterval(() => {
-                this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1;
-              }, 2000);
-            }
-          }" x-init="loop">
-          <template x-for="slide in slides" :key="slide.id">
-            <div x-show="activeSlide === slide.id" class="flex items-center">
-              <div class="w-full text-center">
-                <div class="absolute inset-x-0 bottom-4 text-center">
-                  <img x-bind:src="slide.image" alt="Slide Image" class="mx-auto w-60 md:w-[400px] md:h-auto m-4 bg-shadow bg-shadow">
+      <div class="relative container pt-16 pb-96 md:pt-48 md:pb-80 md:p-40">
+          <div class=" mx-auto relative w-full h-80">
+            <div x-data="{
+            activeSlide: 1,
+            slides: [
+            {id: 1, image: 'dist/images/component/bionicom1.png', title: 'Bionicom Zinc', description: 'Membantu memenuhi kebutuhan vitamin B, C, dan E serta mineral zinc untuk membantu memlihara daya tahan tubuh dan membantu memulihkan kondisi setelah sakit.'},
+            {id: 2, image: 'dist/images/component/bionicomc.png', title: 'Bionicom-C', description: 'Kombinasi vitamin B kompleks dan vitamin C, Niacinamide dan Calcium Pantothenate yang penting untuk memelihara tubuh.'},
+            {id: 3, image: 'dist/images/component/bionicomc500.png', title: 'Bionicom-C 500', description: 'Kombinasi vitamin B kompleks dan vitamin C, Niacinamide dan Calcium Pantothenate yang penting untuk memelihara tubuh.'},
+            ],
+            loop() {
+                setInterval(() => {
+                  this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1;
+                }, 2000);
+              }
+            }" x-init="loop">
+            <template x-for="slide in slides" :key="slide.id">
+              <div x-show="activeSlide === slide.id" class="flex items-center">
+                <div class="w-full text-center">
+                  <div class="absolute inset-x-0 bottom-4 text-center">
+                    <img x-bind:src="slide.image" alt="Slide Image" class="mx-auto w-60 md:w-[400px] md:h-auto m-4 bg-shadow bg-shadow">
+                  </div>
                 </div>
               </div>
-            </div>
-          </template>
-          <div class="absolute inset-0 hidden md:flex md:visible">
-            <div class="flex items-center justify-start w-1/2">
-              <button 
-              x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
-              class="border border-secondary text-primary hover:bg-secondary hover:text-white_primary transition font-bold rounded-full w-8 h-8 md:w-12 md:h-12 shadow-lg flex justify-center items-center pr-0.5 ml-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex items-center justify-end w-1/2">
-              <button 
-              x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1" class="border border-secondary text-primary hover:bg-primary hover:text-white_primary transition font-bold rounded-full w-8 h-8 md:w-12 md:h-12 shadow-lg flex justify-center items-center pl-0.5 mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="absolute -bottom-10 md:-bottom-10 w-full flex items-center justify-center px-4 py-5">
-            <template x-for="slide in slides": key="slide.id">
-              <button class="w-2 h-2 mt-4 mx-2 mb-2 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-zinc-500 hover:shadow-lg"
-              :class="{
-                'bg-primary p-1.5 dark:shadow-lg' : activeSlide === slide.id,
-                'bg-zinc-300' : activeSlide !== slide.id
-              }"
-              x-on:click="activeSlide = slide.id"></button>
             </template>
-            <div class="absolute inset-0 flex md:hidden">
+            <div class="absolute inset-0 hidden md:flex md:visible">
               <div class="flex items-center justify-start w-1/2">
                 <button 
                 x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
@@ -129,14 +101,42 @@
                 </button>
               </div>
             </div>
-          </div>
-          <div class="absolute inset-x-0 -bottom-52 md:-bottom-32 text-center">
-            <h1 class="max-w-xl mx-auto text-zinc1 dark:text-white_primary text-xl"><span class="text-primary text-4xl font-bold">PRODUK MULTIVITAMIN,</h1>
-              <p class="mt-4 font-sans font-medium text-lg md:text-xl text-zinc1 dark:text-white_primary">Penting untuk Menjaga Daya Tahan Tubuh Anda!</p>
+            <div class="absolute -bottom-10 md:-bottom-10 w-full flex items-center justify-center px-4 py-5">
+              <template x-for="slide in slides": key="slide.id">
+                <button class="w-2 h-2 mt-4 mx-2 mb-2 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-zinc-500 hover:shadow-lg"
+                :class="{
+                  'bg-primary p-1.5 dark:shadow-lg' : activeSlide === slide.id,
+                  'bg-zinc-300' : activeSlide !== slide.id
+                }"
+                x-on:click="activeSlide = slide.id"></button>
+              </template>
+              <div class="absolute inset-0 flex md:hidden">
+                <div class="flex items-center justify-start w-1/2">
+                  <button 
+                  x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
+                  class="border border-secondary text-primary hover:bg-secondary hover:text-white_primary transition font-bold rounded-full w-8 h-8 md:w-12 md:h-12 shadow-lg flex justify-center items-center pr-0.5 ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex items-center justify-end w-1/2">
+                  <button 
+                  x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1" class="border border-secondary text-primary hover:bg-primary hover:text-white_primary transition font-bold rounded-full w-8 h-8 md:w-12 md:h-12 shadow-lg flex justify-center items-center pl-0.5 mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-x-0 -bottom-52 md:-bottom-32 text-center">
+              <h1 class="max-w-xl mx-auto text-zinc1 dark:text-white_primary text-xl"><span class="text-primary text-4xl font-bold">PRODUK MULTIVITAMIN,</h1>
+                <p class="mt-4 font-sans font-medium text-lg md:text-xl text-zinc1 dark:text-white_primary">Penting untuk Menjaga Daya Tahan Tubuh Anda!</p>
+            </div>
           </div>
         </div>
-        </div>
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-full flex justify-center items-center bottom-0 mb-7 space-x-4 md:flex-col md:space-x-0 md:justify-start md:items-start md:ml-48 md:space-y-4">
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-full flex justify-center items-center bottom-0 mb-20 space-x-4 md:flex-col md:space-x-0 md:justify-start md:items-start md:ml-48 md:space-y-4">
                 <a
                   href="https://www.youtube.com/@bionicomofficial5369"
                   target="_blank"
