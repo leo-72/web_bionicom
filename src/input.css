@@ -6,11 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: inherit;
-  overflow-x: hidden;
-}
-
 .bg-shadow {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
