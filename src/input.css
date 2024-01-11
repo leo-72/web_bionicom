@@ -243,7 +243,7 @@ a:hover #triangle {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #F58640;
+  background-color: #DE5800;
   z-index: -1;
   transition: 0.5s ease-in-out;
 }
