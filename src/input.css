@@ -11,6 +11,11 @@ body {
   overflow-x: hidden;
 }
 
+@font-face { 
+  font-family: 'Berlin Sans FB'; 
+  src: local('Berlin Sans FB'), local('BerlinSansFB'), url('https://fonts.gstatic.com/s/berlinsansfbr/v13/4iCq6KVjbNBYlgoC1CzTtw.ttf') format('truetype');
+  font-display: swap; }
+
 .navbar-fixed {
   @apply fixed z-[9999] bg-white_primary bg-opacity-80 backdrop-blur-sm dark:bg-zinc1 dark:bg-opacity-80;
   box-shadow: inset 0 -1px 0px rgba(0, 0, 0, 0.2);
