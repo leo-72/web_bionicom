@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+.bg-shadow {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
 @font-face { 
   font-family: 'Berlin Sans FB'; 
   src: local('Berlin Sans FB'), local('BerlinSansFB'), url('https://fonts.gstatic.com/s/berlinsansfbr/v13/4iCq6KVjbNBYlgoC1CzTtw.ttf') format('truetype');
@@ -142,17 +146,13 @@ a:hover #triangle {
 }
 
 .inner-shadow {
-  box-shadow: inset 0 0 96px rgb(0, 0, 0); 
-}
-
-.hover-inner-shadow {
-  box-shadow: inset 0 0 1200px rgb(0, 0, 0); 
+  box-shadow: inset 0 0 50px rgb(0, 0, 0, 0.5); 
 }
 
 @media screen and (max-width: 700px) {
     .custom-svg {
-        width: 400px;
-        height: 420px;
+        width: 500px;
+        height: 520px;
     }
     .custom-iframe {
         width: 320px;
