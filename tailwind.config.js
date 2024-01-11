@@ -18,7 +18,7 @@ module.exports = {
         card: "#d6d3d1",
         white_primary: "#fafafa",
         white_secondary: "#f4f4f5",
-        gray: "#737373",
+        gray: "#a1a1aa",
         bg1: "#F3FDFD",
         bg2: "#F3FDFD",
         zinc1: "#09090b",
@@ -26,6 +26,9 @@ module.exports = {
         zinc3: "#27272a",
         zinc4: "#52525b",
         list_primary: "#EB9B66",
+        wa: "#67C15E",
+        ig: "#FC2B82",
+        yt: "#CE1312",
       },
       screens: {
         "2xl": "1440px",
@@ -33,7 +36,7 @@ module.exports = {
       },
       fontFamily: {
         'berlin': ['"Berlin Sans FB"', 'sans-serif'],
-        sans: ['Lato', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+        'sans': ['Lato', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
       },
     },
   },

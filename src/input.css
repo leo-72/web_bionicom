@@ -8,6 +8,7 @@ html {
 
 body {
   font-family: inherit;
+  overflow-x: hidden;
 }
 
 .navbar-fixed {
@@ -161,10 +162,14 @@ a:hover #triangle {
         height: 300px;
     }
     .popup-content {
-      background-color: #fefefe;
-      margin: 15% auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
       padding: 20px;
-      width: 80%;
+      border-radius: 8px;
+      max-width: 80%; /* Sesuaikan lebar maksimum jika diinginkan */
     }
 }
 
@@ -186,10 +191,14 @@ a:hover #triangle {
         height: 400px;
     }
     .popup-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 40px;
-      width: 40%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 80%; /* Sesuaikan lebar maksimum jika diinginkan */
     }
 }
 
@@ -211,10 +220,14 @@ a:hover #triangle {
         height: 500px;
     }
     .popup-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 40px;
-      width: 40%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 80%; /* Sesuaikan lebar maksimum jika diinginkan */
     }
 }
 
@@ -259,4 +272,36 @@ a:hover #triangle {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.hide-text h4 {
+  display: none;
+}
+
+.hide-text:hover h4 {
+  display: block;
+  animation: showText 0.5s ease-in-out forwards;
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  25% {
+    opacity: 0.25;
+    transform: translateX(-30px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-20px);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
